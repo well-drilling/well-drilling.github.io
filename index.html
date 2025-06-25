@@ -1,10 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Web 2.0 Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Modern Website</title>
+  
+  <!-- CSS Styles -->
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffc107;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #007BFF;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #007BFF;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    /* Button styling */
+    .btn {
+      display: inline-block;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Image */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 15px 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Navigation for small screens */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Web 2.0 Site</h1>
-  <p>This is hosted on GitHub Pages!</p>
+
+  <header>
+    <h1>My Modern Website</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Welcome to our website! We create beautiful, responsive, and user-friendly websites using modern web technologies.</p>
+      <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=900&q=80" alt="Beautiful landscape" />
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>We offer a range of web design and development services tailored to your needs:</p>
+      <ul>
+        <li>Custom Website Design</li>
+        <li>Responsive Web Development</li>
+        <li>E-commerce Solutions</li>
+        <li>SEO Optimization</li>
+      </ul>
+      <button class="btn" id="learnMoreBtn">Learn More</button>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to work with us? Fill out the form below!</p>
+      <form id="contactForm">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required placeholder="Your Name" /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required placeholder="you@example.com" /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea><br /><br />
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p id="formResponse" style="color: green; margin-top: 15px; display: none;"></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 My Modern Website. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Button click event
+    document.getElementById('learnMoreBtn').addEventListener('click', () => {
+      alert('Thank you for your interest! We will contact you soon.');
+    });
+
+    // Simple form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent actual form submission
+
+      // Get form values
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+
+      if(name && email && message) {
+        // Simulate form submission success
+        document.getElementById('formResponse').textContent = `Thanks for reaching out, ${name}! We'll get back to you at ${email}.`;
+        document.getElementById('formResponse').style.display = 'block';
+
+        // Clear form fields
+        this.reset();
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+  </script>
+
 </body>
 </html>
