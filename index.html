@@ -3,202 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Modern Website</title>
-  
-  <!-- CSS Styles -->
+  <title>Oilfield Cementing Company USA</title>
   <style>
-    /* Reset some default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
       background: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
-
-    header {
-      background-color: #007BFF;
+    header, footer {
+      background-color: #004080;
       color: white;
-      padding: 20px 0;
+      padding: 15px 20px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    header h1 {
-      font-size: 2.5rem;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
+    header nav a {
       color: white;
-      text-decoration: none;
       margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
     }
-
-    nav a:hover {
-      color: #ffc107;
+    header nav a:hover {
+      text-decoration: underline;
     }
-
     main {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      color: #007BFF;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #007BFF;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-    }
-
-    /* Button styling */
-    .btn {
-      display: inline-block;
-      background-color: #007BFF;
-      color: white;
-      padding: 12px 25px;
-      border: none;
+      margin: 20px auto;
+      padding: 0 15px;
+      background: white;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
       border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
     }
-
-    .btn:hover {
-      background-color: #0056b3;
+    h1, h2 {
+      color: #004080;
     }
-
-    /* Responsive Image */
-    img {
+    img.responsive {
       max-width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 5px;
     }
-
-    /* Footer */
-    footer {
-      background-color: #222;
-      color: #ddd;
-      text-align: center;
-      padding: 15px 10px;
-      position: fixed;
+    .footer-contact {
+      font-size: 0.9em;
+    }
+    /* Simple page hiding for SPA effect */
+    section {
+      display: none;
+      padding: 20px 0;
+    }
+    section.active {
+      display: block;
+    }
+    /* Contact form styling */
+    form {
+      max-width: 500px;
+      margin-top: 15px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input[type="text"], input[type="email"], textarea {
       width: 100%;
-      bottom: 0;
-      font-size: 0.9rem;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 3px;
     }
-
-    /* Responsive Navigation for small screens */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      margin-top: 15px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 1em;
+    }
+    button:hover {
+      background-color: #003366;
+    }
+    .cta {
+      margin-top: 20px;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .cta:hover {
+      background-color: #005bb5;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>My Modern Website</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Oilfield Cementing Company in USA</h1>
+  <nav>
+    <a href="#" data-page="home">Home</a>
+    <a href="#" data-page="contact">Contact Us</a>
+  </nav>
+  <div class="footer-contact">
+    Call us: (123) 456-7890 | Email: info@oilcementusa.com
+  </div>
+</header>
 
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Welcome to our website! We create beautiful, responsive, and user-friendly websites using modern web technologies.</p>
-      <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=900&q=80" alt="Beautiful landscape" />
-    </section>
+<main>
+  <!-- Home Page -->
+  <section id="home" class="active">
+    <h2>Welcome to Our Oilfield Cementing Services</h2>
+    <img src="https://images.unsplash.com/photo-1581093588401-7a3a3a1b5a9f?auto=format&fit=crop&w=900&q=80" alt="Oilfield Cementing" class="responsive" />
+    <p>
+      We are a leading oilfield cementing company based in the USA, committed to delivering high-quality cementing solutions for oil and gas wells. Our expert team ensures safe, efficient, and reliable cementing services tailored to meet the unique challenges of each project.
+    </p>
+    <p>
+      Our services include primary cementing, remedial cementing, zonal isolation, and well integrity solutions. We use advanced technology and industry best practices to maximize well performance and longevity.
+    </p>
+    <p>
+      Safety and environmental responsibility are at the core of everything we do. We strive to exceed client expectations with professionalism and technical excellence.
+    </p>
+  </section>
 
-    <section id="services">
-      <h2>Our Services</h2>
-      <p>We offer a range of web design and development services tailored to your needs:</p>
-      <ul>
-        <li>Custom Website Design</li>
-        <li>Responsive Web Development</li>
-        <li>E-commerce Solutions</li>
-        <li>SEO Optimization</li>
-      </ul>
-      <button class="btn" id="learnMoreBtn">Learn More</button>
-    </section>
+  <!-- Contact Page -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to request a quote? Fill out the form below and our team will get back to you promptly.</p>
+    <form id="contactForm">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required />
+      
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required />
+      
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="formMessage" style="margin-top:15px;"></div>
+    <div class="cta" onclick="alert('Call us now at (123) 456-7890!')">Call Us Now: (123) 456-7890</div>
+  </section>
+</main>
 
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Have questions or want to work with us? Fill out the form below!</p>
-      <form id="contactForm">
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" required placeholder="Your Name" /><br /><br />
+<footer>
+  <p>© 2025 Oilfield Cementing Company USA. All rights reserved.</p>
+  <p>Contact: info@oilcementusa.com | Phone: (123) 456-7890</p>
+</footer>
 
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required placeholder="you@example.com" /><br /><br />
+<script>
+  // Simple SPA navigation
+  const links = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('main section');
 
-        <label for="message">Message:</label><br />
-        <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea><br /><br />
-
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-      <p id="formResponse" style="color: green; margin-top: 15px; display: none;"></p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 My Modern Website. All rights reserved.
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Button click event
-    document.getElementById('learnMoreBtn').addEventListener('click', () => {
-      alert('Thank you for your interest! We will contact you soon.');
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const page = link.getAttribute('data-page');
+      sections.forEach(sec => {
+        sec.classList.toggle('active', sec.id === page);
+      });
     });
+  });
 
-    // Simple form submission handler
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent actual form submission
-
-      // Get form values
-      const name = this.name.value.trim();
-      const email = this.email.value.trim();
-      const message = this.message.value.trim();
-
-      if(name && email && message) {
-        // Simulate form submission success
-        document.getElementById('formResponse').textContent = `Thanks for reaching out, ${name}! We'll get back to you at ${email}.`;
-        document.getElementById('formResponse').style.display = 'block';
-
-        // Clear form fields
-        this.reset();
-      } else {
-        alert('Please fill in all fields.');
-      }
-    });
-  </script>
+  // Simple form submission handler (no backend, just demo)
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const message = this.message.value.trim();
+    if(name && email && message) {
+      document.getElementById('formMessage').textContent = 'Thank you, ' + name + '! Your message has been sent.';
+      this.reset();
+    } else {
+      document.getElementById('formMessage').textContent = 'Please fill in all required fields.';
+    }
+  });
+</script>
 
 </body>
 </html>
+
